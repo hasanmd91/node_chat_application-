@@ -1,4 +1,4 @@
-# Snake Game
+# Chat application
 
 -
 -
@@ -8,9 +8,10 @@
 
 ## Technologies used
 
-- javascript
-- Html
-- Css
+- Node.js
+- Express.js
+- Ejs
+- Validate.js
 
 ## Setup and usage
 
