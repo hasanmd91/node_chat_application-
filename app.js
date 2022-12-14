@@ -1,8 +1,18 @@
+// external imports
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+
+//internal imports
+const loginRouter = require("./router/loginRouter");
+const userRouter = require("./router/userRouter");
+const inboxRouter = require("./router/inboxRouter");
+const {
+  notFoundHandeler,
+  erroHandeler,
+} = require("./middlewares/common/errorHandeler");
 
 const app = express();
 dotenv.config();
@@ -32,9 +42,21 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 // parse cookies
+//wordpress salt genretor sha1 algo = COOKIE_SECRET
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 //rounting setup
+
+app.use("/", loginRouter);
+app.use("/users", userRouter);
+app.use("/inbox", inboxRouter);
+
+// 404 not found handeler
+
+app.use(notFoundHandeler);
+
+// commo error handeler
+app.use(erroHandeler);
 
 app.listen(process.env.PORT, () => console.log("server is running "));
