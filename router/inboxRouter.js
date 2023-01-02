@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
-const { getInbox } = require("../controllers/inboxController");
+const { getInbox } = require("../controller/inboxController");
 
 router.get("/", getInbox);
 

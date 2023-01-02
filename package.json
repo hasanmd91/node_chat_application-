@@ -1,15 +1,22 @@
 {
   "name": "node_chat_application",
   "version": "1.0.0",
+  "description": "chat application using node.js",
   "main": "app.js",
   "scripts": {
     "start": "NODE_ENV = development nodemon app.js",
     "prod": "NODE_ENV = production node app.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasanmd91/node_chat_application-.git"
+  },
   "author": "Hasan",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/hasanmd91/node_chat_application-/issues"
+  },
+  "homepage": "https://github.com/hasanmd91/node_chat_application-#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
@@ -18,8 +25,8 @@
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
     "http-errors": "^2.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.8.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.2",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.20"
   }
